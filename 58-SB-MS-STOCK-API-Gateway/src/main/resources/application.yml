@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: STOCK-PRICE-API
+          uri: lb://STOCK-PRICE-API
+          predicates:
+            - Path=/api1/price/**
+          filters:
+            - StripPrefix=1 # Removes `/api1` before forwarding to the service
+        - id: STOCK-CALC-API
+          uri: lb://STOCK-CALC-API
+          predicates:
+            - Path=/api2/calc/**
+          filters:
+            - StripPrefix=1 # Removes `/api2` before forwarding to the service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # URL of the Eureka Server
+server:
+  port: 3333

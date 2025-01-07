@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: API-Gateway
+  cloud:
+    gateway:
+      routes:
+      - id: api-1
+        uri: lb://WELCOME-API
+        predicates:
+          - Path=/welcome
+      - id: api-2
+        uri: lb://GREET-API
+        predicates:
+          - Path=/greet
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka/ # URL of the Eureka Server
+server:
+  port: 3333

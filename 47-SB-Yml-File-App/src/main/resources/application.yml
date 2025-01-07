@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: 47-SB-Yml-File-App
+
+server:
+  port: 9090
+app:
+  messages: 
+    greetMsg: Good Morning!!
+    welcomeMsg: Welcome to Ashok It!!

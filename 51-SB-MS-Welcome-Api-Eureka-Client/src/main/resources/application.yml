@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Welcome-Api	
+server:
+  port: 1111
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9090/eureka/ # URL of the Eureka Server
+    registerWithEureka: true # Enable registration with Eureka Server
+    fetchRegistry: true      # Enable fetching of Eureka Server registry
+  instance:
+    preferIpAddress: true    # Register using IP address instead of hostname

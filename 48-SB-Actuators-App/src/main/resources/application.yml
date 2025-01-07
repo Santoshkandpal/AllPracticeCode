@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: 48-SB-Actuators-App
+server:
+  port: 9090
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: beans,mappings

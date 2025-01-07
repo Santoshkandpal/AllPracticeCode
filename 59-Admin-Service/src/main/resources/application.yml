@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 59-Admin-Service
+server:
+  port: 4444

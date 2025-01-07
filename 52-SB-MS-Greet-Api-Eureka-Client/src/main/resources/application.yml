@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: Greet-Api
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://localhost:9090/eureka/ # URL of the Eureka Server
+server:
+  port: 2222

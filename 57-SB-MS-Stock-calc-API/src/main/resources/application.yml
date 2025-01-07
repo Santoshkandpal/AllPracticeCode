@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: STOCK-CALC-API
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:4444
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 2222
