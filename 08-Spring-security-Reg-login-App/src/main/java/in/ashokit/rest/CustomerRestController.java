@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import in.ashokit.entity.Customer;
 import in.ashokit.repo.CustomerRepository;
 import in.ashokit.service.CustomerService;
+import in.ashokit.service.JWTService;
 
 @RestController
 public class CustomerRestController {
@@ -28,6 +29,9 @@ public class CustomerRestController {
 	
 	@Autowired	
 	private AuthenticationManager authMangaer;
+	
+	@Autowired
+	private JWTService jwtService;
 
 	
 	@GetMapping("/welcome")
@@ -45,7 +49,8 @@ public class CustomerRestController {
 		
 		try {
 			if(authenticate.isAuthenticated()) {
-				return new ResponseEntity<>("welcome to ashok It", HttpStatus.OK);
+				String jwt = jwtService.generateToken(customer.getEmail());
+				return new ResponseEntity<>(jwt, HttpStatus.OK);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
