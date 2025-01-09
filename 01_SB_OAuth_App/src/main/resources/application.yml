@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: 01_SB_OAuth_App
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: Ov23liqbXNLNCqJ1RXzb
+            clientSecret: 99a4d1c2b38109e4851b089fa64d6c85e20719b7
