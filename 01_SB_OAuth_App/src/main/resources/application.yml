@@ -6,5 +6,6 @@ spring:
       client:
         registration:
           github:
-            clientId: Ov23liqbXNLNCqJ1RXzb
-            clientSecret: 99a4d1c2b38109e4851b089fa64d6c85e20719b7
+						# Client id and client secret i comemnted because git security feature it is not pushing
+          #  client Id: Ov23liqbXNLNCqJ1RXzb
+          #  client Secret: 99a4d1c2b38109e4851b089fa64d6c85e20719b7

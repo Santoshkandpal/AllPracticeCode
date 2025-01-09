@@ -6,7 +6,8 @@ spring:
       client:
         registration:
           google:
-            clientId: 691746576081-pjoq438tls3grqle6c4q3n73kssborhp.apps.googleusercontent.com
-            clientSecret: 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
+						
+          #  clientId: 691746576081-pjoq438tls3grqle6c4q3n73kssborhp.apps.googleusercontent.com
+          #  clientSecret: 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
 
 
