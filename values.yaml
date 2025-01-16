@@ -1,0 +1,46 @@
+replicaCount: 1
+
+image:
+  repository: k8s.gcr.io/metrics-server/metrics-server
+  tag: v0.5.0
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: true
+  name: metrics-server
+
+rbac:
+  create: true
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 200Mi
+  limits:
+    cpu: 200m
+    memory: 400Mi
+
+tolerations: []
+nodeSelector: {}
+affinity: {}
+
+livenessProbe:
+  httpGet:
+    path: /livez
+    port: https
+    scheme: HTTPS
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet:
+    path: /readyz
+    port: https
+    scheme: HTTPS
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+
+metrics:
+  enabled: true
